@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<h2>Index</h2>
+@Ajax.ActionLink("Top", "SelectAll", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "divEmployee", InsertionMode = InsertionMode.Replace, LoadingElementId = "divLoad", LoadingElementDuration = 1000 })
+@Ajax.ActionLink("Top 3", "SelectTop3", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "divEmployee", InsertionMode = InsertionMode.Replace, LoadingElementId = "divLoad", LoadingElementDuration = 1000 })
+@Ajax.ActionLink("Bottom 3", "SelectBottom3", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "divEmployee", InsertionMode = InsertionMode.Replace, LoadingElementId = "divLoad", LoadingElementDuration = 1000 })
+@Ajax.ActionLink("Create", "Create", new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "divEmployee", InsertionMode = InsertionMode.Replace, LoadingElementId = "divLoad", LoadingElementDuration = 1000 })
+
+<div id="divLoad" style="display: none;">
+    <img src="../../Image/light_blue_material_design_loading.gif" alt="" />
+</div>
+<div id="divEmployee">
+</div>
+@Html.ActionLink("Hello", "Hello")
